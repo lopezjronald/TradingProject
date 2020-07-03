@@ -1,2 +1,0 @@
-# TradingProject
-# TradingProject
