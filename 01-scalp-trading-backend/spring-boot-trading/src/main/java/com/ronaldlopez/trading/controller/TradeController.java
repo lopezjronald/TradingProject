@@ -53,7 +53,7 @@ public class TradeController {
                     trade.setExchangeCode(newTrade.getExchangeCode());
                     trade.setSpread(newTrade.getSpread());
                     trade.setPremiumPrice(newTrade.getPremiumPrice());
-                    trade.setSize(newTrade.getSize());
+                    trade.setTradeSize(newTrade.getTradeSize());
                     trade.setBidSize(newTrade.getBidSize());
                     trade.setBidPrice(newTrade.getBidPrice());
                     trade.setAskPrice(newTrade.getAskPrice());

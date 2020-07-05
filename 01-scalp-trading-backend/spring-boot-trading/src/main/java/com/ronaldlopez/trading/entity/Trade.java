@@ -1,8 +1,10 @@
 package com.ronaldlopez.trading.entity;
 
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Data
 @Entity
@@ -18,16 +20,16 @@ public class Trade {
     private int referenceId;
 
     @Column(name="trade_date")
-    private String tradeDate;
+    private Date tradeDate;
 
     @Column(name="time_of_trade")
-    private String timeOfTrade;
+    private Date timeOfTrade;
 
     @Column(name="underlying")
     private String underlying;
 
     @Column(name="expiration_date")
-    private String expirationDate;
+    private Date expirationDate;
 
     @Column(name="strike_price")
     private double strikePrice;
@@ -50,8 +52,8 @@ public class Trade {
     @Column(name="premium_price")
     private double premiumPrice;
 
-    @Column(name="size")
-    private int size;
+    @Column(name="trade_size")
+    private int tradeSize;
 
     @Column(name="bid_size")
     private int bidSize;

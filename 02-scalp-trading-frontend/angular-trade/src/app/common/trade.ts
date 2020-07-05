@@ -1,10 +1,10 @@
 export class Trade {
   id: number;
   referenceId: number;
-  tradeDate: string;
-  timeOfTrade: string;
+  tradeDate: Date;
+  timeOfTrade: Date;
   underlying: string;
-  expirationDate: string;
+  expirationDate: Date;
   strikePrice: number;
   tradeType: string;
   openInterest: number;
@@ -12,7 +12,7 @@ export class Trade {
   exchangeCode: string;
   spread: number;
   premiumPrice: number;
-  size: number;
+  tradeSize: number;
   bidSize: number;
   bidPrice: number;
   askPrice: number;

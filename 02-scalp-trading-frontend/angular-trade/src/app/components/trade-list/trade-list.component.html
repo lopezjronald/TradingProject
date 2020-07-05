@@ -1,6 +1,75 @@
-
-<p *ngFor="let tempTrade of trades">
-  {{tempTrade.id}}: {{tempTrade.referenceId}}, {{tempTrade.exchangeCode}} <br>
-  {{tempTrade.strikePrice | currency: 'USD'}}
-</p>
+<section>
+  <!--for demo wrap-->
+  <h1>Wall Street Trading Trades</h1>
+  <div class="tbl-header">
+    <table>
+      <thead>
+      <tr>
+<!--        <th></th>-->
+        <th>Reference ID</th>
+        <th>Date of Trade</th>
+<!--        <th>Time of Trade</th>-->
+        <th>Underlying</th>
+<!--        <th>Expiration Date</th>-->
+<!--        <th>Strike Price</th>-->
+        <th>Type of Trade</th>
+<!--        <th>Open Interest</th>-->
+<!--        <th>Ind</th>-->
+        <th>Exchange Code</th>
+<!--        <th>Spread</th>-->
+<!--        <th>Premium Price</th>-->
+<!--        <th>Size</th>-->
+<!--        <th>Bid Size</th>-->
+<!--        <th>Bid Price</th>-->
+<!--        <th>Ask Price</th>-->
+<!--        <th>Ask Size</th>-->
+<!--        <th>Edge</th>-->
+<!--        <th>Lean Size</th>-->
+<!--        <th>Size Ratio</th>-->
+<!--        <th>Delta</th>-->
+<!--        <th>Theta</th>-->
+<!--        <th>Vega</th>-->
+<!--        <th>Gamma</th>-->
+<!--        <th>Sigma</th>-->
+<!--        <th>Rho</th>-->
+      </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table>
+      <tbody >
+      <tr *ngFor="let tempTrade of trades">
+<!--        <td></td>-->
+        <td>{{tempTrade.referenceId}}</td>
+        <td>{{tempTrade.tradeDate | date }}</td>
+<!--        <td>{{tempTrade.timeOfTrade | date: "hh:mm:ss"}}</td>-->
+        <td>{{tempTrade.underlying}}</td>
+<!--        <td>{{tempTrade.expirationDate | date}}</td>-->
+<!--        <td>{{tempTrade.strikePrice | currency: 'USD'}}</td>-->
+        <td>{{tempTrade.tradeType}}</td>
+<!--        <td>{{tempTrade.openInterest}}</td>-->
+<!--        <td>{{tempTrade.ind}}</td>-->
+        <td>{{tempTrade.exchangeCode}}</td>
+<!--        <td>{{tempTrade.spread | currency: 'USD'}}</td>-->
+<!--        <td>{{tempTrade.premiumPrice | currency: 'USD'}}</td>-->
+<!--        <td>{{tempTrade.size}}</td>-->
+<!--        <td>{{tempTrade.bidSize}}</td>-->
+<!--        <td>{{tempTrade.bidPrice | currency: 'USD'}}</td>-->
+<!--        <td>{{tempTrade.askPrice | currency: 'USD'}}</td>-->
+<!--        <td>{{tempTrade.askSize}}</td>-->
+<!--        <td>{{tempTrade.edge}}</td>-->
+<!--        <td>{{tempTrade.leanSize}}</td>-->
+<!--        <td>{{tempTrade.sizeRatio | currency: 'USD'}}</td>-->
+<!--        <td>{{tempTrade.delta | currency: 'USD'}}</td>-->
+<!--        <td>{{tempTrade.theta | currency: 'USD'}}</td>-->
+<!--        <td>{{tempTrade.vega | currency: 'USD'}}</td>-->
+<!--        <td>{{tempTrade.gamma | currency: 'USD'}}</td>-->
+<!--        <td>{{tempTrade.sigma | currency: 'USD'}}</td>-->
+<!--        <td>{{tempTrade.rho | currency: 'USD'}}</td>-->
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
 
