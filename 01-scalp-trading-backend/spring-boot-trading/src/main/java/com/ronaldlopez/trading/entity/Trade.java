@@ -94,4 +94,8 @@ public class Trade {
     @Column(name="rho")
     private double rho;
 
+    @ManyToOne
+    @JoinColumn(name="user_id", nullable = false)
+    private User user;
+
 }
