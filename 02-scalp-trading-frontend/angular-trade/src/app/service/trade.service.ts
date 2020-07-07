@@ -14,31 +14,19 @@ export class TradeService {
   constructor(private httpClient: HttpClient) {
   }
 
-  getTradeUsers(): Observable<Trade[]> {
+  getTradeList(theUserId: number): Observable<Trade[]> {
+
+   // @TODO need to build URL based on user id will come back to this!
+
     return this.httpClient.get<GetResponse>(this.baseUrl).pipe(
       map(response => response._embedded.trades)
     );
   }
 
-  // getTradeList(theUserId: number): Observable<Trade[]> {
-  //   const searchUrl = `${this.baseUrl}/search/findByUserId?id=${theUserId}`;
-  //   return this.httpClient.get<GetResponse>(this.baseUrl).pipe(
-  //     map(response => response._embedded.trades)
-  //   );
-  // }
-
-  searchTrades(theKeyword: string): Observable<Trade[]> {
-
-    const searchUrl = `${this.baseUrl}/search/findByUnderlyingContaining?underlying=${theKeyword}`;
-
-    return this.httpClient.get<GetResponse>(searchUrl).pipe(
-      map(response => response._embedded.trades)
-    );
-  }
 }
 
 interface GetResponse {
   _embedded: {
-    trades: Trade[];
+    trades: Trade [];
   };
 }

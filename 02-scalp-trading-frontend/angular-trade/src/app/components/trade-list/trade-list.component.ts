@@ -11,7 +11,7 @@ import {ActivatedRoute} from '@angular/router';
 export class TradeListComponent implements OnInit {
 
   trades: Trade[];
-  searchMode: boolean;
+  currentUserId: number;
 
   constructor(private tradeService: TradeService,
               private route: ActivatedRoute) {
@@ -20,33 +20,24 @@ export class TradeListComponent implements OnInit {
   ngOnInit() {
     this.route.paramMap.subscribe(() => {
       this.listTrades();
-  });
+    });
 }
 
-  listTrades() {
+listTrades() {
 
-    this.searchMode = this.route.snapshot.paramMap.has('keyword');
-    if (this.searchMode) {
-      this.handleSearchTrades();
+    const hasUserId: boolean = this.route.snapshot.paramMap.has('id');
+
+    if (hasUserId) {
+      // get the id param string and convert string to a number using the + symbol
+      this.currentUserId = +this.route.snapshot.paramMap.get('id');
     }
     else {
-      this.handleListTrades();
+      // not category id available... default to category id 1
+      this.currentUserId = 1;
     }
-  }
 
-  handleSearchTrades() {
-    const theKeyword: string = this.route.snapshot.paramMap('keyword');
-
-    this.tradeService.searchTrades(theKeyword).subscribe(
-      data => {
-        this.trades = data;
-      }
-    );
-  }
-
-  handleListTrades() {
-    this.tradeService.getTradeList().subscribe(
-
+    // now the products for the given user id
+    this.tradeService.getTradeList(this.currentUserId).subscribe(
       data => {
         this.trades = data;
       }
